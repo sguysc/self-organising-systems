@@ -136,8 +136,8 @@ BATCH_SIZE = 8
 POOL_SIZE = 1024
 CELL_FIRE_RATE = 0.5
 
-# TARGET_EMOJI = "🦎" #@param {type:"string"}
-TARGET_EMOJI = "pic1.png"
+#TARGET_EMOJI = "🦎" #@param {type:"string"}
+TARGET_EMOJI = "pic1.bmp"
 
 EXPERIMENT_TYPE = "Growing" #@param ["Growing", "Persistent", "Regenerating"]
 EXPERIMENT_MAP = {"Growing":0, "Persistent":1, "Regenerating":2}
@@ -145,6 +145,14 @@ EXPERIMENT_N = EXPERIMENT_MAP[EXPERIMENT_TYPE]
 
 USE_PATTERN_POOL = [0, 1, 1][EXPERIMENT_N]
 DAMAGE_N = [0, 0, 3][EXPERIMENT_N]  # Number of patterns to damage in a batch
+
+#from google.colab import files
+
+#uploaded = files.upload()
+
+#for fn in uploaded.keys():
+#  print('User uploaded file "{name}" with length {length} bytes'.format(
+#      name=fn, length=len(uploaded[fn])))
 
 #@title CA Model and Utilities
 
@@ -164,7 +172,7 @@ def load_bw_image(fname, max_size=TARGET_SIZE):
   img = PIL.Image.open(fname)
   # import pdb; pdb.set_trace()
   img.thumbnail((max_size, max_size), PIL.Image.ANTIALIAS)
-  img = np.float32(img)/255.0
+  img = np.float32(img) #/255.0
   # even grayscale convert to 0/1
   img = np.floor(img)
   return img
@@ -341,7 +349,7 @@ def plot_loss(loss_log):
 #url = 'https://github.com/google-research/self-organising-systems/blob/master/assets/growing_ca/planaria2_48.png?raw=true'
 #target_img = load_image(url, 48)
 
-target_img = load_bw_image(TARGET_EMOJI)
+target_img = load_emoji(TARGET_EMOJI)
 # make the 1's the places where we want to be
 target_img = 1 - target_img
 # imshow(zoom(to_rgb(target_img), 2), fmt='png')
