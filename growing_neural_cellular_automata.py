@@ -174,7 +174,7 @@ def load_emoji(emoji):
   # url = 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u%s.png'%code
   # print(url)
   # return load_image(url)
-  return load_bw_image(url)
+  return load_bw_image(emoji)
 
 
 def to_rgba(x):
