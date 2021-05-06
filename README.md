@@ -1,6 +1,6 @@
 [![Original Code](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sguysc/self-organising-systems/blob/master/notebooks/growing_ca.ipynb)
 
-[![Our Code](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sguysc/self-organising-systems/blob/master/notebooks/robot_swarm_formation.ipynb)
+[![Our Code](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sguysc/self-organising-systems/blob/master/robot_swarm_formation.ipynb)
 
 # Self-organising Systems
 
